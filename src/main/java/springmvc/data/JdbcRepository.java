@@ -19,4 +19,9 @@ public class JdbcRepository implements Repository {
 		return spittleList;
 	}
 
+	@Override
+	public Spittle findSpittle(long spittleId) {
+		return new Spittle("Spittle"+spittleId, new Date());
+	}
+	
 }
