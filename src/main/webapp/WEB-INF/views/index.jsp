@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello World! YES</h2>
+<h2>springmvc</h2>
 </body>
 </html>
