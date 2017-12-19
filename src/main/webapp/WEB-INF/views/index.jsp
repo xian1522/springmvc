@@ -5,7 +5,7 @@
 </body>
 <div>
 	<ul>
-		<li><a href="<c:url value="/fileupload"/>">fileupload</a></li>
+		<li><a href="<c:url value="/index/fileupload"/>">fileupload</a></li>
 	</ul>
 </div>
 </html>

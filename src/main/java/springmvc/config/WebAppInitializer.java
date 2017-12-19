@@ -1,5 +1,8 @@
 package springmvc.config;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends
@@ -19,5 +22,12 @@ public class WebAppInitializer extends
 	protected String[] getServletMappings() {
 		return new String []{"/"};
 	}
-
+	
+	/**
+	 * …œ¥´∏Ωº˛≈‰÷√
+	 */
+	@Override
+	protected void customizeRegistration(Dynamic registration){
+		registration.setMultipartConfig(new MultipartConfigElement("/temp/uploads"));
+	}
 }
