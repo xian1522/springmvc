@@ -12,5 +12,14 @@
 	<c:if test="${not empty filename}">${filename}</c:if><br>
 	<c:if test="${not empty content}">${content}</c:if><br>
 </div>
+<div>
+	<div>apache multipart</div>
+	<form action="commonProcessUpload" method="post" enctype="multipart/form-data">
+		<input type="file" name="filedata">
+		<input type="submit" value="submit">
+	</form>
+	<c:if test="${not empty filename}">${filename}</c:if><br>
+	<c:if test="${not empty apachecontent}">${apachecontent}</c:if><br>
+</div>
 </body>
 </html>
