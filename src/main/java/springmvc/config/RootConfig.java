@@ -21,9 +21,9 @@ public class RootConfig {
 	@Bean
     public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/springmvc?useUnicode=true&characterEncoding=utf8");
-        dataSource.setUsername("wj");
-        dataSource.setPassword("wj");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/jeesite?useUnicode=true&characterEncoding=utf8");
+        dataSource.setUsername("root");
+        dataSource.setPassword("123");
         dataSource.setMinIdle(10);
         dataSource.setMaxActive(100);
         dataSource.setMaxWait(5000);
@@ -36,7 +36,7 @@ public class RootConfig {
     public LocalSessionFactoryBean localSessionFactoryBean(DataSource dataSource) {
 		LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("springmvc.data");
+//        factoryBean.setPackagesToScan("springmvc.data");
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         hibernateProperties.setProperty("hibernate.show_sql", "true");
