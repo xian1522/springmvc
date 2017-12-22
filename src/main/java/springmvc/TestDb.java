@@ -18,7 +18,7 @@ import springmvc.config.RootConfig;
 public class TestDb {
 	
 	@Autowired
-	private SessionFactory sessionFactory;
+	public SessionFactory sessionFactory;
 	
 	@SuppressWarnings("unchecked")
 	@Test

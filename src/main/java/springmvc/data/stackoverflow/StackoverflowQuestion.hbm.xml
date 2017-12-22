@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="springmvc.data.stackoverflow.StackoverflowQuestion" table="stackoverflow_question">
+		<id name="id" column="ID">
+			<generator class="identity" />
+		</id>
+		<property name="title" />
+		<property name="content" column="content" />
+		<property name="anwser" column="anwser" />
+		<property name="tag" column="tag" />
+		<property name="remark" column="remark" />
+		<property name="createdate" type="date" column="createdate" />
+		<property name="lstmntdate" type="date" column="lstmntdate" />
+
+	</class>
+</hibernate-mapping>
