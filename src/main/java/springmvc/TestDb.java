@@ -3,6 +3,7 @@ package springmvc;
 import java.util.List;
 
 import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,8 +24,8 @@ public class TestDb {
 	@Test
 	public void test() {
 		String hql = "SELECT * FROM cms_article";
-		sessionFactory.openSession();
-		SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(hql);
+		Session session = sessionFactory.openSession();
+		SQLQuery query = session.createSQLQuery(hql);
 		List<Object> list = query.list();
 		System.out.println(list.size());
 	}
