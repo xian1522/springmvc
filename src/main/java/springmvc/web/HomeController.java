@@ -17,4 +17,9 @@ public class HomeController {
 	public String fileupload(){
 		return "redirect:/fileupload/fileupload";
 	}
+	
+	@RequestMapping(value="/stackoverflow",method=RequestMethod.GET)
+	public String stackoverflow(){
+		return "stackoverflow/managerlist";
+	}
 }

@@ -6,6 +6,7 @@
 <div>
 	<ul>
 		<li><a href="<c:url value="/index/fileupload"/>">fileupload</a></li>
+		<li><a href="<c:url value="/index/stackoverflow"/>">stackoverflow</a>
 	</ul>
 </div>
 </html>
