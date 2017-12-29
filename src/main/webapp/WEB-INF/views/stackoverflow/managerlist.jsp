@@ -2,10 +2,8 @@
 <%@ page isELIgnored="false"%>
 <html>
 <head>
-<!-- 	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css"> -->
-<!-- 	<link rel="stylesheet" type="text/css" href="../themes/icon.css"> -->
-<!-- 	<link rel="stylesheet" type="text/css" href="../demo.css"> -->
-<!-- 	<script type="text/javascript" src="/WEB-INF/javascript/jquery.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/themes/icon.css">
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/jquery.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/jquery.easyui.min.js"></script>
 </head>
@@ -13,8 +11,13 @@
 <h2>stackoverflow</h2>
 </body>
 <div>
-<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
-			data-options="singleSelect:true,collapsible:true,method:'get'">
+<table class="easyui-datagrid" title="Basic DataGrid" style="width:100%;height:500px"
+			data-options="singleSelect:true,
+						  collapsible:true,
+						  method:'get',
+						  rownumbers:true,
+						  pagination:true,
+						  pageSize:10">
 		<thead>
 			<tr>
 				<th data-options="field:'itemid',width:80">Item ID</th>
