@@ -22,7 +22,7 @@
 				pagination : true,
 				rownumbers : true,
 				columns : [[
-				            {field: 'itemid',title:'Item ID',align:'center',width:500}]]
+				            {field: 'content',title:'Item ID',align:'center',width:500}]]
 			});
 		}
 	</script>
