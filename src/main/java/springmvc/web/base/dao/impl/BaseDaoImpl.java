@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import springmvc.web.base.dao.BaseDao;
 
 @SuppressWarnings("unchecked")
-@Repository
+@Repository("baseDao")
 public class BaseDaoImpl extends AbstractDao implements BaseDao {
 	
 	@Resource  

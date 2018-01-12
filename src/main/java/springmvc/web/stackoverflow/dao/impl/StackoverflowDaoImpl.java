@@ -4,10 +4,13 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Repository;
+
 import springmvc.data.stackoverflow.StackoverflowQuestion;
 import springmvc.web.base.dao.BaseDao;
 import springmvc.web.stackoverflow.dao.StackoverflowDao;
 
+@Repository("stackoverflowDao")
 public class StackoverflowDaoImpl implements StackoverflowDao {
 	
 	@Resource
@@ -21,7 +24,8 @@ public class StackoverflowDaoImpl implements StackoverflowDao {
 	@Override
 	public List<StackoverflowQuestion> findQuestionList(
 			StackoverflowQuestion question) {
-		return null;
+		String hql = " from StackoverflowQuestion";
+		return baseDao.findByParams(hql, null);
 	}
 
 }

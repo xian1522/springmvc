@@ -7,11 +7,31 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/themes/icon.css">
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/jquery.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			loadGridData();
+		});
+		function loadGridData(){
+			$("#stackoverflowlist").datagrid({
+				width : 'auto',
+				higth : '500',
+				striped : true,
+				singleSelect : true,
+				url : contextPath+'/stackoverflow/findQuestionList',
+				loadMsg : "数据加载中...",
+				pagination : true,
+				rownumbers : true,
+				columns : [[
+				            {field: 'itemid',title:'Item ID',align:'center',width:500}]]
+			});
+		}
+	</script>
 </head>
 <body>
 <h2>stackoverflow</h2>
 </body>
 <div>
+<!-- 
 <table class="easyui-datagrid" title="Basic DataGrid" style="width:100%;height:500px"
 			data-options="singleSelect:true,
 						  collapsible:true,
@@ -29,6 +49,7 @@
 				<th data-options="field:'status',width:60,align:'center'">Status</th>
 			</tr>
 		</thead>
-	</table>
+	</table> -->
+<table id="stackoverflowlist"> </table>
 </div>
 </html>
