@@ -2,6 +2,7 @@
 <%@ page isELIgnored="false"%>
 <html>
 <head>
+	<%@include file="/WEB-INF/views/common/meta.jsp"%>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/themes/icon.css">
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/jquery.min.js"></script>
