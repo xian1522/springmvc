@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -13,11 +14,12 @@ import springmvc.web.base.dao.BaseDao;
 @Repository("baseDao")
 public class BaseDaoImpl extends AbstractDao implements BaseDao {
 	
-	@Resource  
-    public void setSessionFacotry(SessionFactory sessionFacotry) {  
-        super.setSessionFactory(sessionFacotry);  
-    }  
+	@Resource
+	private SessionFactory sessionFactory;
 	
+	private Session getSession(){
+		return sessionFactory.openSession();
+	}
 	/**
 	 * 根据给定参数执行HQL语句
 	 * @param queryString
@@ -29,9 +31,9 @@ public class BaseDaoImpl extends AbstractDao implements BaseDao {
 	@Override
 	public <T> List<T> findByParams(String queryString, Object[] params) {
 		if(params != null){
-			return this.getHibernateTemplate().find(queryString, params);
+			return getSession().createQuery(queryString).setString(1, params[0]+"").list();
 		}else{
-			return this.getHibernateTemplate().find(queryString);
+			return getSession().createQuery(queryString).list();
 		}
 	}
 
