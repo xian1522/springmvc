@@ -29,6 +29,7 @@ public class RootConfig {
         dataSource.setMaxWait(5000);
         dataSource.setMinEvictableIdleTimeMillis(30000);
         dataSource.setPoolPreparedStatements(true);
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
     }
 	
