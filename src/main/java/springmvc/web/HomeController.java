@@ -20,6 +20,6 @@ public class HomeController {
 	
 	@RequestMapping(value="/stackoverflow",method=RequestMethod.GET)
 	public String stackoverflow(){
-		return "stackoverflow/managerlist";
+		return "redirect:/stackoverflow/managerlist";
 	}
 }
