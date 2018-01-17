@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 	<%@include file="/WEB-INF/views/common/meta.jsp"%>
@@ -21,9 +22,26 @@
 				loadMsg : "数据加载中...",
 				pagination : true,
 				rownumbers : true,
+				title:'stackoverflow',
 				columns : [[
-				            {field: 'content',title:'Item ID',align:'center',width:500}]]
+							{field: 'title',title:'标题',align:'center',width:500},
+				            {field: 'content',title:'内容',align:'center',width:500}]],
+				toolbar : [{
+					  	text:'新增',
+					  	iconCls:'icon-add',
+					  	handler: addQuestion,
+					  },
+					  {
+						text:'删除',
+						iconCls:'icon-cut',
+						handler:function(){alert('delete');}
+					  }
+					]
 			});
+		}
+		//新增页面
+		function addQuestion(){
+			alert("adds");
 		}
 	</script>
 </head>
@@ -31,25 +49,6 @@
 <h2>stackoverflow</h2>
 </body>
 <div>
-<!-- 
-<table class="easyui-datagrid" title="Basic DataGrid" style="width:100%;height:500px"
-			data-options="singleSelect:true,
-						  collapsible:true,
-						  method:'get',
-						  rownumbers:true,
-						  pagination:true,
-						  pageSize:10">
-		<thead>
-			<tr>
-				<th data-options="field:'itemid',width:80">Item ID</th>
-				<th data-options="field:'productid',width:100">Product</th>
-				<th data-options="field:'listprice',width:80,align:'right'">List Price</th>
-				<th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
-				<th data-options="field:'attr1',width:250">Attribute</th>
-				<th data-options="field:'status',width:60,align:'center'">Status</th>
-			</tr>
-		</thead>
-	</table> -->
 <table id="stackoverflowlist"> </table>
 </div>
 </html>

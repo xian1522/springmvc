@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import springmvc.data.stackoverflow.StackoverflowQuestion;
 import springmvc.web.stackoverflow.service.StackoverflowService;
@@ -26,6 +26,7 @@ public class StackoverflowController {
 	 * @return
 	 */
 	@RequestMapping(value="/findQuestionList")
+	@ResponseBody
 	public List<StackoverflowQuestion> findQuestionList(){
 		StackoverflowQuestion question = new StackoverflowQuestion();
 		List<StackoverflowQuestion> questionList = stackoverflowService.findQuestionList(question);
